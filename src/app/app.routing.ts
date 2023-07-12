@@ -7,6 +7,8 @@ import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.compon
 import { AuthLayoutComponent } from "./layouts/auth-layout/auth-layout.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { AuthService } from "./services/auth.service";
+import { ClientLayoutComponent } from "./layouts/client-layout/client-layout.component";
+import { UserGuard } from "./guards/user.guard";
 
 const routes: Routes = [
   {
@@ -15,7 +17,7 @@ const routes: Routes = [
     pathMatch: "full",
   },
   {
-    path: "",
+    path: "admin",
     component: AdminLayoutComponent,
     children: [
       {
@@ -42,6 +44,20 @@ const routes: Routes = [
     ],
   },
   {
+    path: "app",
+    component: ClientLayoutComponent,
+    children: [
+      {
+        path: "",
+        loadChildren: () =>
+          import("src/app/layouts/client-layout/client-layout.module").then(
+            (m) => m.ClientLayoutModule
+          ),
+      },
+    ],
+    canActivate: [UserGuard],
+  },
+  {
     path: "**",
     redirectTo: "dashboard",
   },
@@ -56,6 +72,6 @@ const routes: Routes = [
     }),
   ],
   exports: [],
-  providers: [AuthGuard],
+  providers: [AuthGuard, UserGuard],
 })
 export class AppRoutingModule {}

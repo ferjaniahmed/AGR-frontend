@@ -7,5 +7,5 @@ import { UserProfileComponent } from 'src/app/pages/user-profile/user-profile.co
 export const AuthLayoutRoutes: Routes = [
     { path: 'login',          component: LoginComponent },
     { path: 'register',       component: RegisterComponent },
-    { path: 'user-profile',   component: UserProfileComponent },
+    //{ path: 'user-profile',   component: UserProfileComponent },
 ];

@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { AuthResponse } from "../api/auth-response";
 import { User } from "../api/user";
+import { AuthResponse } from "../api/auth-response";
 
 @Injectable()
 export class AuthService {

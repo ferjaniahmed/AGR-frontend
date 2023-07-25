@@ -35,16 +35,13 @@ export class AuthGuard implements CanActivate {
       let payload = jwtDecode<Payload>(token);
       if (payload.role === "admin") {
         return true;
-      } else if (payload.role === "client") {
-        this.router.navigate(["app/user-protfile"]);
-        return true;
       } else {
         this.router.navigate(["/login"]);
         return false;
       }
     } else {
       this.router.navigate(["/login"]);
-      return true;
+      return false;
     }
   }
 }

@@ -13,6 +13,8 @@ import { SidebarComponent } from "src/app/components/sidebar/sidebar.component";
 import { FooterComponent } from "src/app/components/footer/footer.component";
 import { NavbarComponent } from "src/app/components/navbar/navbar.component";
 import { ComponentsModule } from "src/app/components/components.module";
+import { HomeComponent } from "src/app/pages/home/home.component";
+import { UserService } from "src/app/services/user.service";
 
 @NgModule({
   imports: [
@@ -24,6 +26,12 @@ import { ComponentsModule } from "src/app/components/components.module";
     ClipboardModule,
     ComponentsModule,
   ],
-  declarations: [UserProfileComponent, TablesComponent, ClientLayoutComponent],
+  declarations: [
+    UserProfileComponent,
+    TablesComponent,
+    ClientLayoutComponent,
+    HomeComponent,
+  ],
+  providers: [UserService],
 })
 export class ClientLayoutModule {}

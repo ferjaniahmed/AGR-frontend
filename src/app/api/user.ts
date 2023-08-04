@@ -1,3 +1,5 @@
+import { Role } from "./role";
+
 export class User {
   _id: string;
   firstName: string;
@@ -6,5 +8,7 @@ export class User {
   image?: string;
   dateOfBirth: Date;
   address: string;
-  role: string;
+  password?: string;
+  role: Role;
+  phone: string;
 }

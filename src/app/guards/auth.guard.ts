@@ -26,9 +26,6 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree> {
     //read token from localeStorage
     const token = localStorage.getItem("token");
-    console.log(token);
-    /*let payload = jwtDecode(token);
-    console.log(payload);*/
 
     if (token) {
       //decode token

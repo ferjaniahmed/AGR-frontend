@@ -1,0 +1,11 @@
+.shop {
+  min-height: 100vh;
+  z-index: -1;
+  margin-top: 100px;
+  margin-left: 1em;
+}
+.card {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  height: auto;
+}

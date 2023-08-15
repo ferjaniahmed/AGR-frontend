@@ -23,11 +23,9 @@ export class UserGuard implements CanActivate {
     | Promise<boolean | UrlTree> {
     //throw new Error("Method not implemented.");
     const token = localStorage.getItem("token");
-    console.log(token);
     if (token) {
       //decode token
       let payload = jwtDecode<Payload>(token);
-      console.log(payload);
       if (payload.role === "client") {
         //this.router.navigate(["app/user-protfile"]);
         return true;

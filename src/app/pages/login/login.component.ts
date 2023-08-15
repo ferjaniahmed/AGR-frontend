@@ -20,11 +20,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.authService.login(this.email, this.password).subscribe((data) => {
       localStorage.setItem("token", data.access_token);
       const payload = jwtDecode<Payload>(data.access_token);
-      console.log(payload);
       if (payload.role === "admin") {
         this.router.navigate(["admin/dashboard"]);
       } else {
-        console.log("pass");
         this.router.navigate(["app/home"]);
       }
     });

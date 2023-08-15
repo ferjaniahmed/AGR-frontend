@@ -1,0 +1,27 @@
+<div
+  style="margin: 10px 0 0 0; height: 400px; width: 300px"
+  class="simple-card"
+  *ngFor="
+    let item of foods | paginate : { itemsPerPage: 10, currentPage: page }
+  "
+>
+  <div class="bg-image hover-overlay" mdbRipple rippleColor="light">
+    <img
+      alt=""
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Pizza_Margherita_stu_spivack.jpg/1200px-Pizza_Margherita_stu_spivack.jpg"
+      class="img-fluid"
+    />
+    <a href="#!"> </a>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">{{ item.name }}</h3>
+    <p class="card-text">{{ item.description }}</p>
+    <div style="display: flex; justify-content: space-between">
+      <p style="font-size: 18px"><b>15 DT</b></p>
+      <a href="#!" class="btn btn-outline-primary">Add</a>
+    </div>
+  </div>
+</div>
+<div class="has-text-centered">
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

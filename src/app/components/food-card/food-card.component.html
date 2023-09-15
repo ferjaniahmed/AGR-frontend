@@ -1,9 +1,12 @@
+<div class = "foods">
 <div
-  style="margin: 10px 0 0 0; height: 400px; width: 300px"
-  class="simple-card"
-  *ngFor="
-    let item of foods | paginate : { itemsPerPage: 10, currentPage: page }
-  "
+class="one-card"
+  style="  margin: 10px 0 0 0;
+  height: 380px;
+  width: 300px;
+  background-color:white;
+  border: 1px solid black;"
+  *ngFor="let food of foods | paginate: { itemsPerPage: 9, currentPage: page }"
 >
   <div class="bg-image hover-overlay" mdbRipple rippleColor="light">
     <img
@@ -14,14 +17,15 @@
     <a href="#!"> </a>
   </div>
   <div class="card-body">
-    <h3 class="card-title">{{ item.name }}</h3>
-    <p class="card-text">{{ item.description }}</p>
+    <h3 class="card-title">{{ food.name }}</h3>
+    <p class="card-text">{{ food.description }}</p>
     <div style="display: flex; justify-content: space-between">
       <p style="font-size: 18px"><b>15 DT</b></p>
-      <a href="#!" class="btn btn-outline-primary">Add</a>
+      <a href="#!" class="btn btn-outline-primary" (click)="onClick(food._id)">Add</a>
     </div>
   </div>
 </div>
-<div class="has-text-centered">
+<div class="has-text-centered" style="margin-top:20px ;">
   <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
 </div>

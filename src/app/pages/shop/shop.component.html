@@ -1,3 +1,4 @@
+
 <div
   class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
   style="
@@ -21,9 +22,7 @@
 <div class="container-fluid mt--7"></div>
 <!--food card-->
 <div class="shop">
-  <div class="card">
-    <app-food-card [foods]="foods"></app-food-card>
-  </div>
+    <app-food-card [foods]="foods" (output)="addOrder($event)"></app-food-card>
   <!--<div class="bg-image hover-overlay" mdbRipple rippleColor="light">
       <img
         alt=""

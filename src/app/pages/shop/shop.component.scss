@@ -3,9 +3,11 @@
   z-index: -1;
   margin-top: 100px;
   margin-left: 1em;
+  //background-color: purple;
 }
 .card {
   display: grid;
   grid-template-columns: auto auto auto;
   height: auto;
+  background-color: aqua;
 }

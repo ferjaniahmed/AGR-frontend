@@ -7,4 +7,6 @@ export class Food {
   price: number;
   image?: string;
   type: FoodType;
+  createdAt?:Date;
+  updatedAt?:Date
 }

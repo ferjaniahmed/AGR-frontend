@@ -1,0 +1,26 @@
+
+<div
+  class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+  style="
+    min-height: 400px;
+    background-image: url(assets/img/theme/pizza.jpg);
+    background-size: cover;
+    background-position: center top;
+  "
+>
+  <!-- Mask -->
+  <span class="mask bg-gradient-danger opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+        <h1 class="display-2 text-white">Shop</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--7"></div>
+<!--food card-->
+<div class="shop" style="max-width: 95%;">
+    <app-food-card [foods]="foods"></app-food-card>
+</div>

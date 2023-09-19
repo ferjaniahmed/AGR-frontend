@@ -1,0 +1,24 @@
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  <div class="col" *ngFor="let food of foods">
+    <div class="card h-100">
+      <img src={{food.image}}
+       class="card-img-top" alt="...">
+      <div class="card-body">
+        <h3 class="card-title">{{food.name}}</h3>
+        <p class="card-text">{{food.description}}</p>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <h3>{{food.price + " TND"}}</h3>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-success btn-sm" (click)="onClick(food._id)">Show</button>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+

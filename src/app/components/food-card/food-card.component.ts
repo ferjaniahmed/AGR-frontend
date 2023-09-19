@@ -1,23 +1,24 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Router } from "@angular/router";
 import { Food } from "src/app/api/food";
 
 
 @Component({
   selector: "app-food-card",
   templateUrl: "./food-card.component.html",
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FoodCardComponent implements OnInit {
 
   @Input() foods: Food[];
-  page = 1;
-  @Output() output = new EventEmitter<string>()
+  //page = 1;
+
+  constructor(private router : Router){}
 
   ngOnInit(): void {
-    console.log(this.foods);
   }
 
-  onClick(id :string){
-    this.output.emit(id)
+  onClick(id : string){
+    this.router.navigate(["app/product-page",{ productId : id}])
   }
 }

@@ -21,28 +21,6 @@
 </div>
 <div class="container-fluid mt--7"></div>
 <!--food card-->
-<div class="shop">
-    <app-food-card [foods]="foods" (output)="addOrder($event)"></app-food-card>
-  <!--<div class="bg-image hover-overlay" mdbRipple rippleColor="light">
-      <img
-        alt=""
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Pizza_Margherita_stu_spivack.jpg/1200px-Pizza_Margherita_stu_spivack.jpg"
-        class="img-fluid"
-      />
-      <a href="#!">
-        <div
-          class="mask"
-          style="background-color: rgba(251, 251, 251, 0.15)"
-        ></div>
-      </a>
-    </div>
-    <div class="card-body">
-      <h3 class="card-title">aaaaaaaaaaaaa</h3>
-      <p class="card-text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-      <div style="display: flex; justify-content: space-between">
-        <p style="font-size: 18px"><b>15 DT</b></p>
-        <a href="#!" class="btn btn-primary" (click)="addOrder()">Add</a>
-      </div>
-    </div>
-  </div>-->
+<div class="shop" style="max-width: 95%;">
+    <app-food-card [foods]="foods"></app-food-card>
 </div>

@@ -8,7 +8,7 @@ export class User {
   image?: string;
   dateOfBirth: Date;
   address: string;
-  password?: string;
   role: Role;
+  password ? : string
   phone: string;
 }

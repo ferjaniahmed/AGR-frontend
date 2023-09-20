@@ -29,6 +29,6 @@ export class HomeComponent implements OnInit {
   }
 
   humburgerClick() {
-    this.route.navigate(["app/shop", { food: "humburger" }]);
+    this.route.navigate(["app/shop", { food: "hamburger" }]);
   }
 }

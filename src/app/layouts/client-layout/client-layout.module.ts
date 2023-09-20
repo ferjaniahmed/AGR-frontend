@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { ClientLayoutRoutes } from "./client-layout.routing";
 import { UserProfileComponent } from "src/app/pages/user-profile/user-profile.component";
@@ -18,6 +18,7 @@ import { FoodService } from "src/app/services/food.service";
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild(ClientLayoutRoutes),
     FormsModule,
     HttpClientModule,

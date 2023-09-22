@@ -6,11 +6,11 @@ declare const google: any;
   templateUrl: './maps.component.html',
   styleUrls: ['./maps.component.scss']
 })
-export class MapsComponent  {
+export class MapsComponent implements OnInit {
 
   constructor() { }
 
-  /*ngOnInit() {
+  ngOnInit() {
     let map = document.getElementById('map-canvas');
     let lat = map.getAttribute('data-lat');
     let lng = map.getAttribute('data-lng');
@@ -51,6 +51,6 @@ export class MapsComponent  {
     google.maps.event.addListener(marker, 'click', function() {
         infowindow.open(map, marker);
     });
-  }*/
+  }
 
 }

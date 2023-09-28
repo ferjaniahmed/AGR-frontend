@@ -21,7 +21,6 @@ export class UserGuard implements CanActivate {
     | UrlTree
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
-    //throw new Error("Method not implemented.");
     const token = localStorage.getItem("token");
     if (token) {
       //decode token

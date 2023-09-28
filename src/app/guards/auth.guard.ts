@@ -33,11 +33,11 @@ export class AuthGuard implements CanActivate {
       if (payload.role === "admin") {
         return true;
       } else {
-        this.router.navigate(["/login"]);
+        //this.router.navigate(["/login"]);
         return false;
       }
     } else {
-      this.router.navigate(["/login"]);
+      //this.router.navigate(["/login"]);
       return false;
     }
   }

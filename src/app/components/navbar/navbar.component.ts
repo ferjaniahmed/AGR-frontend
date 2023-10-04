@@ -27,14 +27,12 @@ export class NavbarComponent implements OnInit {
     }else{
       this.listTitles = ADMIN_ROUTES.filter(listTitle => listTitle);
     }
-    console.log(this.listTitles)
   }
   getTitle(){
     var titlee = this.location.prepareExternalUrl(this.location.path()).substring(0,5);
     if(titlee.charAt(0) === '#'){
         titlee = titlee.slice( 1 );
     }
-    console.log(titlee)
     for(var item = 0; item < this.listTitles.length; item++){
         if(this.listTitles[item].path === titlee){
             return this.listTitles[item].title;

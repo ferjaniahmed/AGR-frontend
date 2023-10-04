@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { ClientLayoutRoutes } from "./client-layout.routing";
 import { UserProfileComponent } from "src/app/pages/user-profile/user-profile.component";
-//import { TablesComponent } from "src/app/pages/tables/tables.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ClipboardModule } from "ngx-clipboard";
 import { ClientLayoutComponent } from "./client-layout.component";
@@ -14,6 +13,7 @@ import { HomeComponent } from "src/app/pages/home/home.component";
 import { UserService } from "src/app/services/user.service";
 import { ShareModule } from "src/app/shares/shared.module";
 import { FoodService } from "src/app/services/food.service";
+import { ShareService } from "src/app/shares/shares.service";
 
 @NgModule({
   imports: [
@@ -32,6 +32,6 @@ import { FoodService } from "src/app/services/food.service";
     ClientLayoutComponent,
     HomeComponent,
   ],
-  providers: [UserService,FoodService],
+  providers: [UserService,FoodService,ShareService],
 })
 export class ClientLayoutModule {}

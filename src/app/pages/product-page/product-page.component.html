@@ -34,11 +34,11 @@
           <p class="card-text">{{food.description}}</p>
           <div class="mt-5">
             <div class="col-md-3 mb-3">
-              <input type="number" class="form-control" id="validationDefault04" placeholder="1" min="1" required>
+              <input type="number" class="form-control" id="validationDefault04" placeholder="1" min="1" [(ngModel)]="quantity">
             </div>
             <div style="display: flex; justify-content: space-between;">
               <p class="card-text"><span><b>{{food.price +" TND"}}</b></span></p>
-              <button type="button" class="btn btn-success">ADD ORDER</button>
+              <button type="button" class="btn btn-success" (click)="addOrder(food)">ADD ORDER</button>
             </div>
           </div>
     

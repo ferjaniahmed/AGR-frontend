@@ -1,9 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import jwtDecode from "jwt-decode";
-import { Payload } from "src/app/api/payload";
 import { AuthService } from "src/app/services/auth.service";
-import { UserService } from "src/app/services/user.service";
+
 
 @Component({
   templateUrl: "./home.component.html",
@@ -15,6 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private route: Router, private authService: AuthService) {
     //read token from localStorage
     this.token = localStorage.getItem("token");
+    localStorage.setItem("orders" , "[]")
   }
   ngOnInit(): void {
     //get user connect

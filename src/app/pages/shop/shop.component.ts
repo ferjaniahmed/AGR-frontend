@@ -31,7 +31,6 @@ export class ShopComponent implements OnInit {
         }
       });
     }
-    console.log(this.foods)
   }
 
   filter(type: string){

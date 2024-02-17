@@ -1,0 +1,28 @@
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">INDEX</th>
+          <th scope="col">PRODUCT</th>
+          <th scope="col">QUANTITY</th>
+          <th scope="col">TOTAL</th>
+          <th scope="col">ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of orders; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ findFoodById(item.food).name}}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ findFoodById(item.food).price * item.quantity  }} TND</td>
+          <td>
+            <button type="button" placement="top-center" triggers="hover focus click"  class="btn btn-danger" (click)="deleteOrder(item.food)">
+                <div>
+                    <i class="bi bi-trash"></i>
+                </div>
+              </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

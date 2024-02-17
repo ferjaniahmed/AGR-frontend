@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "src/app/services/auth.service";
+import { FoodService } from "src/app/services/food.service";
 
 
 @Component({
@@ -10,10 +11,11 @@ import { AuthService } from "src/app/services/auth.service";
 })
 export class HomeComponent implements OnInit {
   token: string = "";
-  constructor(private route: Router, private authService: AuthService) {
+  constructor(private route: Router, private authService: AuthService , private foodSrevice : FoodService) {
     //read token from localStorage
     this.token = localStorage.getItem("token");
     localStorage.setItem("orders" , "[]")
+    
   }
   ngOnInit(): void {
     //get user connect

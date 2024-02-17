@@ -14,6 +14,8 @@ import { UserService } from "src/app/services/user.service";
 import { ShareModule } from "src/app/shares/shared.module";
 import { FoodService } from "src/app/services/food.service";
 import { ShareService } from "src/app/shares/shares.service";
+import { Store, StoreModule } from "@ngrx/store";
+import { orderReducer } from "src/app/store/order.reducer";
 
 @NgModule({
   imports: [
@@ -26,6 +28,7 @@ import { ShareService } from "src/app/shares/shares.service";
     ClipboardModule,
     ComponentsModule,
     ShareModule,
+    StoreModule.forRoot({orders : orderReducer})
   ],
   declarations: [
     UserProfileComponent,

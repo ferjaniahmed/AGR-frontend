@@ -19,27 +19,4 @@
     </div>
   </div>
 </div>
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">PRODUCT</th>
-          <th scope="col">NAME</th>
-          <th scope="col">PRICE</th>
-          <th scope="col">QUANTITY</th>
-          <th scope="col">TOTAL</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let item of orders| async ;index as i"> 
-        <tr>
-        <th scope="row">{{i+1}}</th>
-        <td>{{item.food.name}}</td>
-        <td>{{item.food.price}} TND</td>
-        <td>{{item.quantity}}</td>
-        <td>{{item.food.price * item.quantity}} TND</td>
-      </tr>
-      </ng-container>
-    </tbody>
-  </table>
-  </div>
+<app-order-card [orders]="$orders" [foods]="$foods" (orderDeleted)="deleteOrder($event)"></app-order-card>

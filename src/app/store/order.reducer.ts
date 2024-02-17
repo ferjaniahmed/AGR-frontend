@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { create_order, delete_order, reset_order, update_order } from './order.actions';
+import { create_order, delete_order, delete_order_by_food_ID, reset_order, update_order } from './order.actions';
 import { Order } from '../api/order';
 
 export interface OrderState{
@@ -18,5 +18,6 @@ export const orderReducer = createReducer(
     state , 
     {orderId , order})=>({...state , orders : state.orders.map((value)=>value._id === orderId ? {...value , ...order} : value)})
     ),
+  on(delete_order_by_food_ID, (state,{ foodId }) =>({...state , orders : state.orders.filter((value) => value.food !== foodId)})),
   on(reset_order, (state) => initialState)
 );

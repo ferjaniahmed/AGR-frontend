@@ -28,7 +28,7 @@ import { orderReducer } from "src/app/store/order.reducer";
     ClipboardModule,
     ComponentsModule,
     ShareModule,
-    StoreModule.forRoot({stores : orderReducer})
+    StoreModule.forRoot({orders : orderReducer})
   ],
   declarations: [
     UserProfileComponent,

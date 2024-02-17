@@ -8,25 +8,25 @@ declare interface RouteInfo {
     {
       path: "user-profile",
       title: "User profile",
-      icon: "ni-single-02 text-yellow",
+      icon: "bi-person-fill",
       class: "",
     },
     {
       path: "home",
       title: "Home",
-      icon: "ni-bullet-list-67 text-red",
+      icon: "bi-house-door-fill",
       class: "",
     },
     {
         path: "order",
         title: "Order",
-        icon: "ni-bullet-list-67 text-red",
+        icon: "bi-bag-fill",
         class: "",
     },
     {
         path: "shop",
         title: "Shop",
-        icon: "ni-bullet-list-67 text-red",
+        icon: "bi-cart-fill",
         class: "",
       },
 

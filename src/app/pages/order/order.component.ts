@@ -1,11 +1,10 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { Observable } from "rxjs";
 import { Food } from "src/app/api/food";
 import { Order } from "src/app/api/order";
 import { FoodService } from "src/app/services/food.service";
-import { ShareService } from "src/app/shares/shares.service";
-import { delete_order, delete_order_by_food_ID } from "src/app/store/order.actions";
+import { OrderService } from "src/app/services/order.service";
+import {  delete_order_by_food_ID } from "src/app/store/order.actions";
 import { selectOrders } from "src/app/store/order.selectors";
 
 
@@ -13,22 +12,21 @@ import { selectOrders } from "src/app/store/order.selectors";
     templateUrl :"./order.component.html",
     styleUrls :["./order.component.scss"]
 })
-export class OrderComponent implements OnInit , OnDestroy{
+export class OrderComponent implements OnInit {
 
     $orders :Order[]
     
     $foods : Food[] = []
-
+    confirm = false
     
     constructor(
-        private shareService : ShareService , 
         private store :Store , 
-        private foodService : FoodService ){
-                this.foodService.findAll().subscribe((data) => this.$foods = data)
-            }
-    ngOnDestroy(): void {
-        
-    }
+        private foodService : FoodService ,
+        private orderService : OrderService
+        ){
+            this.foodService.findAll().subscribe((data) => this.$foods = data)
+        }
+
     
     
     ngOnInit(): void {
@@ -40,7 +38,8 @@ export class OrderComponent implements OnInit , OnDestroy{
     confirmOrder(){
         // need cache
         console.log("confirme")
-        //this.shareService.createManyOrder(this.$orders).subscribe(data => console.log(data))
+        this.orderService.createManyOrder(this.$orders).subscribe(data => console.log(data))
+        this.confirm = !this.confirm
     }
 
     deleteOrder(id : string){

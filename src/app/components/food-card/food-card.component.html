@@ -1,10 +1,10 @@
 
 <div class="row row-cols-1 row-cols-md-4 g-3" style="margin-left: 10px ;">
   <ng-container class="col" *ngFor="let food of foods ">
-    <div class="card h-100"  >
+    <div class="card h-150" style=" overflow: hidden;" >
       <img src={{food.image}}
        class="card-img-top" alt="...">
-      <div class="card-body">
+      <div class="card-body" >
         <h3 class="card-title">{{food.name}}</h3>
         <p class="card-text">{{food.description}}</p>
         <div class="container text-center">

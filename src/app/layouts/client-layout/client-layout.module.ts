@@ -16,6 +16,7 @@ import { FoodService } from "src/app/services/food.service";
 import { ShareService } from "src/app/shares/shares.service";
 import { Store, StoreModule } from "@ngrx/store";
 import { orderReducer } from "src/app/store/order.reducer";
+import { OrderService } from "src/app/services/order.service";
 
 @NgModule({
   imports: [
@@ -35,6 +36,6 @@ import { orderReducer } from "src/app/store/order.reducer";
     ClientLayoutComponent,
     HomeComponent,
   ],
-  providers: [UserService,FoodService,ShareService],
+  providers: [UserService,FoodService,ShareService,OrderService],
 })
 export class ClientLayoutModule {}

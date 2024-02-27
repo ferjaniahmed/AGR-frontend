@@ -1,26 +1,24 @@
 import { Injectable } from "@angular/core";
 import { Order } from "../api/order";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { BehaviorSubject, Observable, Subject } from "rxjs";
+import { Observable } from "rxjs";
 
-const URL = "http://localhost:3000"
 
 @Injectable()
-export class OrederService{
+export class OrderService{
     orders : Order[] =[]  ;
-    private token = localStorage.getItem("token");
+    token : string 
+    
     constructor(private _http : HttpClient){
-        this.orders = JSON.parse(localStorage.getItem("orders")) as Order[]
-    }
-    ngOnInit(): void {
+        this.token  = localStorage.getItem("token")
     }
 
-    createManyOrder(data : Order[]):Observable<Order[]>{
+    createManyOrder(data : Order[]){
         const options = {
             headers: new HttpHeaders({
             Authorization: `Bearer ${this.token}`,
             }),
           };
-        return this._http.post<Order[]>(`${URL}/order`,data,options)
+        return this._http.post("http://localhost:3000/order/create-many",data,options)
     }
 }

@@ -8,6 +8,7 @@ conception et développement d'une Interface reactice pour la gestion des restau
 ## Installation
 
 ```bash
+$ git checkout develop
 $ npm install
 ```
 ## Running the app

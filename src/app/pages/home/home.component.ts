@@ -1,9 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import jwtDecode from "jwt-decode";
-import { Payload } from "src/app/api/payload";
 import { AuthService } from "src/app/services/auth.service";
-import { UserService } from "src/app/services/user.service";
+import { FoodService } from "src/app/services/food.service";
+
 
 @Component({
   templateUrl: "./home.component.html",
@@ -12,9 +11,11 @@ import { UserService } from "src/app/services/user.service";
 })
 export class HomeComponent implements OnInit {
   token: string = "";
-  constructor(private route: Router, private authService: AuthService) {
+  constructor(private route: Router, private authService: AuthService , private foodSrevice : FoodService) {
     //read token from localStorage
     this.token = localStorage.getItem("token");
+    localStorage.setItem("orders" , "[]")
+    
   }
   ngOnInit(): void {
     //get user connect

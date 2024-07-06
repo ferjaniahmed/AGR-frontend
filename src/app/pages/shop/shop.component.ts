@@ -13,36 +13,7 @@ import { FoodService } from "src/app/services/food.service";
 export class ShopComponent implements OnInit {
   typeFood = "";
   order :any[]=[]
-  foods: Food[] = [
-    /*{
-      _id: "1",
-      name: "pizza1",
-      description: "aaaaaaaaaaaaaaaaaaa",
-      type: FoodType.PIZZA,
-      price: 15,
-    },
-    {
-      _id: "2",
-      name: "pizza2",
-      description: "aaaaaaaaaaaaaaaaaaa",
-      type: FoodType.PIZZA,
-      price: 55,
-    },
-    {
-      _id: "3",
-      name: "pizza3",
-      description: "aaaaaaaaaaaaaaaaaaa",
-      type: FoodType.PIZZA,
-      price: 35,
-    },
-    {
-      _id: "4",
-      name: "pizza1",
-      description: "aaaaaaaaaaaaaaaaaaa",
-      type: FoodType.PIZZA,
-      price: 15,
-    },*/
-  ];
+  foods: Food[] = [];
   constructor(private route: ActivatedRoute, private foodService: FoodService,private router:Router) {
     this.typeFood = this.route.snapshot.paramMap.get("food");
   }
@@ -55,10 +26,11 @@ export class ShopComponent implements OnInit {
             this.foods.push(value);
           });
         }
-        this.foods = this.filter(this.typeFood)
+        if(this.typeFood!= null){
+          this.foods = this.filter(this.typeFood)
+        }
       });
     }
-    console.log(this.foods)
   }
 
   filter(type: string){

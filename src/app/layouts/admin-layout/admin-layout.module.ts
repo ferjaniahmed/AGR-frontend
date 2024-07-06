@@ -13,6 +13,7 @@ import { TablesComponent } from "src/app/pages/tables/tables.component";
 import { UserService } from "src/app/services/user.service";
 import { ShopComponent } from "src/app/pages/shop/shop.component";
 import { ShareModule } from "src/app/shares/shared.module";
+import { ShareService } from "src/app/shares/shares.service";
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -32,6 +33,6 @@ import { ShareModule } from "src/app/shares/shared.module";
     TablesComponent,
 
   ],
-  providers: [UserService],
+  providers: [UserService,ShareService],
 })
 export class AdminLayoutModule {}

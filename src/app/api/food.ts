@@ -5,7 +5,7 @@ export class Food {
   description: string;
   name: string;
   price: number;
-  image?: string;
+  image: string;
   type: FoodType;
   createdAt?:Date;
   updatedAt?:Date

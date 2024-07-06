@@ -7,6 +7,7 @@ import { RouterModule } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { FoodCardComponent } from "./food-card/food-card.component";
 import { NgxPaginationModule } from "ngx-pagination";
+import { OrderCardComponnet } from "./order-card/order.component";
 
 @NgModule({
   imports: [CommonModule, RouterModule, NgbModule, NgxPaginationModule],
@@ -15,12 +16,14 @@ import { NgxPaginationModule } from "ngx-pagination";
     NavbarComponent,
     SidebarComponent,
     FoodCardComponent,
+    OrderCardComponnet
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
     FoodCardComponent,
+    OrderCardComponnet
   ],
 })
 export class ComponentsModule {}
